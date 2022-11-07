@@ -737,6 +737,9 @@ footer{
 }
 .description_more{
     margin: 5rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .description_more h1{
     font-size: 2rem;
@@ -755,7 +758,17 @@ footer{
 .general_info h2{
     text-align: center;
 }
-
+.more_list{
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 80rem;
+}
+.more_list li{
+    width: 20rem;
+    margin: 1rem;
+}
 .more_list li span{
     color:greenyellow;
     font-size: 1.5rem;
@@ -879,10 +892,17 @@ footer{
     text-align: center;
 }
 .info_1year::after{
-    content:"save$12";
+    content:"save $12";
     display: block;
     font-size: 1rem;
     color: green;
+    text-align: center;
+}
+.info_1month::after{
+    content:"save $0";
+    display: block;
+    font-size: 1rem;
+    color: lightgray;
     text-align: center;
 }
 @media(max-width:70rem){
@@ -984,6 +1004,12 @@ footer{
     color: green;
     font-size: 1rem;
 }
+.price_offer{
+    color: green;
+}
+.price_no_offer{
+    color:lightgray;
+}
 @media(max-width:66rem){
     .details_perks{
         width: 16rem;
@@ -1035,6 +1061,9 @@ footer{
 }
 .description_info a{
     width: 15rem;
+}
+.description_info>.button_stnd{
+    margin-top: 3rem;
 }
 .main_downloads{
     min-height: 20rem;
