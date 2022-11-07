@@ -478,10 +478,12 @@ object-fit:cover
 }
 .top_card h3{
     color: white;
+    margin:0;
+    margin-top:1rem;
 }
 .top_card img{
     border-radius: 5rem;
-    width: 5rem;
+    width: 6rem;
 }
 .user_card p{
     font-size: 0.8rem;
@@ -532,41 +534,46 @@ object-fit:cover
 .slider_indicator.current_slide{
     background: rgba(0, 0, 0, .8);
 }
-
-.is_hidden{display:none}
+.last_indicator{
+    visibility: hidden;
+}
+.is_hidden{
+    display:none
+}
 @media(max-width:50rem){
-    .slider_trac_container{
+    .slider_track_container{
         overflow: hidden;
     }
     .home_users h1{
         font-size: 2rem;
     }
     .card_slider{
-        width: 20rem;
+        width: 16rem;
     }
     .slider_track{
-        overflow-y: scroll;
         scrollbar-width: none;
-        animation: slide infinite 120s ease ;
         height: 22rem;
+    }
+    .slider_card{
+        width: 16rem;
     }
     .slider_track::-webkit-scrollbar{
         display: none;
     }
-
-    @keyframes slide {
-        0% {
-          margin-left: 0px;
-        }
-        100% {
-          margin-left: -2048px;
-        }
+    .slider_nav{
+        width: 16rem;
+        justify-content: space-evenly;
     }
-    .slider_track:active,.slider_track:hover{
-        animation-play-state: paused;
-    
+    .slider_indicator{
+        width: 1rem;
+        height: 1rem;
+        
+        margin: 0 0.3rem;
     }
-    .slider_nav,.slider_button{
+    .last_indicator{
+        visibility: visible;
+    }
+    .slider_button{
         visibility: hidden;
     }
 }
