@@ -10,6 +10,7 @@ body{
 :root{
     --main-clr:#FD7014;
     --main-clr-b:#eeb188;
+    -webkit-tap-highlight-color: transparent;
 }
 /*//////////////////////////////////G L O B A L  C L A S S E S*/
 .button_stnd{
