@@ -101,10 +101,11 @@ const updateDots=(currentDot,targetDot)=>{
     targetDot.classList.add("current_slide")
 }
 const hideShowArrows=(slides,prevButton,nextButton,targetIndex)=>{
+  console.log(targetIndex)
     if(targetIndex===0){
         prevButton.classList.add("is_hidden")
         nextButton.classList.remove("is_hidden")
-    }else if(targetIndex === slides.length-1){
+    }else if(targetIndex === slides.length-3){
         prevButton.classList.remove("is_hidden");
         nextButton.classList.add("is_hidden")
     }else{

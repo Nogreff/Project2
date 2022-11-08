@@ -71,11 +71,12 @@ body{
 header{
     display: flex;
     justify-content: center;
+    width: 100vw;
 }
 .header_wrapper{
     display: flex;
-    justify-content:space-evenly;
-    min-width: 90%;
+    justify-content:space-around;
+    width: 90%;
 }
 .icon_header img{
 width: 10rem;
@@ -85,6 +86,7 @@ object-fit:cover
 .list_format{
     list-style: none;
     display: flex;
+    padding: 0;
 }
 .list_format li a{
     text-decoration: none;
@@ -124,9 +126,13 @@ object-fit:cover
     background-color: hsl(0 0% 0%/0.75);
     backdrop-filter: blur(1rem);
     display: flex;
+    justify-content:center;
 }
 .mobile_toggle{
     display: none;
+}
+.header_login_mobile{
+    width: 0%;
 }
 .header_login{
     padding-top: 1rem;
@@ -156,9 +162,16 @@ object-fit:cover
 }
 .format_log:hover{
     color: white;
+    cursor: pointer;
 }
 .format_register{
     color: white;
+}
+.format_register:hover{
+    cursor: pointer;
+}
+.header_login_mobile{
+    visibility: hidden;
 }
 @supports(backdrop-filter: blur(1rem)){
     .mobile_menu{
@@ -174,11 +187,39 @@ object-fit:cover
         flex-direction: column;
         padding: 0;
     }
-    .header_login{
+    .header_login_mobile{
+        visibility: visible;
         display: flex;
-       flex-wrap: wrap;
+        flex-wrap: wrap;
+        width: 100%;
     }
-    .header_login .list_format li{
+    .header_login_mobile{
+        padding-top: 1rem;
+    }
+    .header_login_mobile .list_format li{
+        width: 8rem;
+        border-radius: 1.5rem;
+        margin: 0 0.5rem;
+        text-align: center;
+        transition: background 300ms ease;
+    }
+    .header_login_mobile .list_format li:first-child{
+        border: 0.1rem solid var(--main-clr-b);
+    }
+    .header_login_mobile .list_format li:last-child{
+        background: var(--main-clr);
+    }
+    .header_login_mobile .list_format li:hover{
+        background: var(--main-clr-b);
+    }
+    .header_login_mobile .list_format li a{   
+       text-decoration: none;
+        display: block;
+    }
+    .header_login{
+        visibility: hidden;
+    }
+    .header_login_mobile .list_format li{
         margin: 1rem;
     }
     .mobile_menu{
@@ -197,7 +238,7 @@ object-fit:cover
     .mobile_menu .header_nav .list_format li{
         padding-bottom: 2.5rem;
     }
-    .header_login::before{
+    .header_login_mobile::before{
         content: "";
         background: gray;
         display: inline-block;
@@ -499,6 +540,7 @@ object-fit:cover
 .slider_button{
     position: absolute;
     top: 50%;
+    -webkit-transform: translateY(-50);
     transform: translateY(-50%);
     border: 0;
     cursor: pointer;
@@ -608,12 +650,12 @@ object-fit:cover
 footer{
     background-color: black;
     color: lightgray;
+    padding-bottom: 2rem;
 }
 .footer_wrapper{ 
     display: flex;
     justify-content:space-evenly;
     align-items: center;
-
 }
 .footer_logo img{
     width: 20rem;
@@ -730,7 +772,7 @@ footer{
     border-style: none;
 }
 .general_card{
-    width: 15rem;
+    width: 14rem;
     height: 20rem;
     display: flex;
     align-items: center;
@@ -756,15 +798,17 @@ footer{
 .general_info{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:space-between;
     align-items: center;
-
+    height: 13rem;
 }
 .general_info p{
     text-align: justify;
+    font-size:0.9rem;
 }
 .general_info h2{
     text-align: center;
+    font-size: 1.5rem;
 }
 .more_list{
     padding: 0;
@@ -780,6 +824,20 @@ footer{
 .more_list li span{
     color:greenyellow;
     font-size: 1.5rem;
+}
+@media(max-width:55rem){
+    .description_general{
+        width: 100vw;
+    }
+    .general_card{
+        width: 10rem;
+    }
+    .general_info p{
+        font-size:0.8rem;
+    }
+    .general_info h2{
+        font-size: 1.3rem;
+    }
 }
 @media(max-width:40rem){
     .features_description h1{
@@ -1095,7 +1153,7 @@ footer{
 }
 .downloads_links span{
     transition: box-shadow 300ms ease;
-    margin: auto 0.7rem;
+    margin:0.7rem;
     padding: 0.5rem;
     width: 4.5rem;
     display:flex;
@@ -1364,9 +1422,9 @@ footer{
 .help_general{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:flex-start;
     align-items: center;
-    min-height: 50rem;
+    min-height: 55rem;
 }
 .help_general h1{
     font-size: 3rem;
@@ -1400,6 +1458,7 @@ footer{
     position: absolute;
     top: 50%;
     right: 20px;
+    -webkit-transform :translateY(-50%);
     transform:translateY(-50%);
     font-size: 1.5rem;
     margin-right: 1rem;
@@ -1413,8 +1472,8 @@ footer{
     position: relative;
     background: white;
     height: 0;
-
-    transition:0.5s; 
+    -webkit-transition: 500ms;
+    transition:500ms; 
     overflow-y: auto;
     overflow: hidden;
 }
@@ -1426,6 +1485,14 @@ footer{
 .list_wrapper{
     padding:0 1rem 0 3rem; 
  
+}
+.list_question>a{
+    text-decoration: none;
+    color: #0066CC;
+    border-bottom: 1px solid #0066CC;
+}
+.list_question>a:hover{
+    cursor: pointer;
 }
 .general_accordion .accordion_box .box_list ul li{
     text-align:justify;
@@ -1456,6 +1523,9 @@ footer{
     width: 2rem;
     margin: auto 1rem;
 }
+.list_question>a:hover{
+    cursor: pointer;
+}
 @media(max-width:55rem){
     .general_accordion .accordion_box .box_label{
         width: 90%;
@@ -1465,8 +1535,7 @@ footer{
         padding: 1rem;
     }
     .general_accordion .accordion_box.active .box_list{
-        
-        height: min(50%,26rem)
+        height: 22rem
     }
 }
 @media(max-width:40rem){
