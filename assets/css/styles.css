@@ -124,7 +124,7 @@ header {
 	transform-origin: left;
 }
 .mobile_menu {
-	background-color: hsl(0 0% 0%/0.75);
+	background-color: hsl(0 0% 0%/0.5);
 	backdrop-filter: blur(1rem);
 	display: flex;
 	justify-content: space-between;
@@ -178,13 +178,12 @@ header {
 }
 @supports (backdrop-filter: blur(1rem)) {
 	.mobile_menu {
-		background: hsl(0 0% 100%/0.1);
+		background: hsl(0 0% 100%/0.5);
 	}
 }
 @media (max-width: 60rem) {
 	.header_wrapper {
 		display: flex;
-		justify-content: flex-start;
 	}
 	.list_format {
 		flex-direction: column;
@@ -220,7 +219,12 @@ header {
 		display: block;
 	}
 	.header_login {
-		visibility: hidden;
+		visibility: visible;
+		margin: 0;
+	}
+
+	.header_login > .list_format > li {
+		margin: 1rem;
 	}
 	.header_login_mobile .list_format li {
 		margin: 1rem;
@@ -228,9 +232,9 @@ header {
 	.mobile_menu {
 		position: fixed;
 		z-index: 1000;
-		inset: 0 0 0 30%;
+		inset: 0 0 0 40%;
 		flex-direction: column;
-		padding: min(15vh, 10rem) 3rem;
+		padding: min(15vh, 10rem) 2rem;
 		transform: translateX(100%);
 		transition: transform 350ms ease;
 		overflow-y: scroll;
@@ -268,11 +272,6 @@ header {
 		background-repeat: no-repeat;
 	}
 }
-/* @media (min-width:35rem) and  (max-width:55rem){
-    .list_menu li{
-        display: none;
-    }
-} */
 
 /*///////////////////////////////////HOME*/
 .home_top {
@@ -372,6 +371,7 @@ header {
 }
 .feature_description p {
 	text-align: justify;
+	margin-top: 2rem;
 }
 .feature_description h2 {
 	font-size: 2.5rem;
@@ -391,9 +391,6 @@ header {
 	z-index: 1;
 	display: inline-block;
 	margin-bottom: 1rem;
-}
-.from-left,
-.from-right {
 }
 .from-left::after {
 	content: '';
@@ -481,7 +478,6 @@ header {
 }
 
 .slider_track-container {
-	/* background: lightgreen;  */
 	height: 80%;
 	position: relative;
 	overflow: hidden;
@@ -495,9 +491,6 @@ header {
 	display: flex;
 	align-items: center;
 	transition: transform 450ms ease-in;
-
-	/*  overflow-y:scroll; */
-	/* scrollbar-width: none; */
 }
 
 .slider_card {
@@ -511,6 +504,7 @@ header {
 }
 .user_card {
 	width: 12rem;
+	height: 22.2rem;
 	border-radius: 2rem;
 	background-color: transparent;
 	box-shadow: 0.2rem 0.2rem 1rem gray;
@@ -519,31 +513,91 @@ header {
 	padding: 1rem;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
-	/* border-bottom: 0.1rem solid black; */
 	background: #fd7014;
 	border-top-left-radius: 2rem;
 	border-top-right-radius: 2rem;
+	height: 10rem;
 }
 .top_card h3 {
 	color: white;
 	margin: 0;
 	margin-top: 1rem;
+	text-align: center;
 }
 .top_card img {
 	border-radius: 5rem;
 	width: 6rem;
 }
+.top_card > div {
+	border-radius: 5rem;
+	width: 6rem;
+	height: 6rem;
+}
+.card_picture_1 {
+	background: url('/assets/img/profile_pics/Adelaide.jpg');
+	background-size: 6rem;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.card_picture_2 {
+	background: url('/assets/img/profile_pics/Melanie.jpg');
+	background-size: 6rem;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.card_picture_3 {
+	background: url('/assets/img/profile_pics/Bethney.jpg');
+	background-size: 6rem;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.card_picture_4 {
+	background: url('/assets/img/profile_pics/Colson.jpg');
+	background-size: 6rem;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.card_picture_5 {
+	background: url('/assets/img/profile_pics/Gus.jpg');
+	background-size: 6rem;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.card_picture_6 {
+	background: url('/assets/img/profile_pics/Abigail.jpg');
+	background-size: 6rem;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.card_picture_7 {
+	background: url('/assets/img/profile_pics/Beau.jpg');
+	background-size: 6rem;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.card_picture_8 {
+	background: url('/assets/img/profile_pics/Jeane.jpg');
+	background-size: 6rem;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.card_picture_9 {
+	background: url('/assets/img/profile_pics/Jaroslavas.jpg');
+	background-size: 6rem;
+	background-repeat: no-repeat;
+	background-position: center;
+}
 .user_card p {
 	font-size: 0.8rem;
-	padding: 1rem 2rem;
-	text-align: justify;
+	padding: 1rem;
 	font-style: italic;
 	border: 0.2rem solid #fd7014;
 	margin: 0;
 	border-bottom-right-radius: 2rem;
 	border-bottom-left-radius: 2rem;
+	height: 8rem;
 }
 .slider_button {
 	position: absolute;
@@ -821,7 +875,7 @@ footer {
 .general_info {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: flex-start;
 	align-items: center;
 	height: 13rem;
 }
@@ -832,6 +886,11 @@ footer {
 .general_info h2 {
 	text-align: center;
 	font-size: 1.5rem;
+	height: 6rem;
+	margin-bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .more_list {
 	padding: 0;
@@ -919,7 +978,6 @@ footer {
 .price_info {
 	height: 22rem;
 	width: 18rem;
-	/* border:0.1rem solid lightgray; */
 	padding: 0 1rem;
 	border-radius: 1rem;
 	display: flex;
@@ -939,7 +997,6 @@ footer {
 }
 
 .best_price {
-	/* border: transparent 0 solid; */
 	padding: 0.3rem;
 	background-clip: padding-box;
 	border-radius: 1rem;
@@ -1279,7 +1336,7 @@ footer {
 .form_button {
 	width: 40rem;
 	display: flex;
-	justify-content: flex-end;
+	justify-content: center;
 }
 .form_button a {
 	margin: 1rem;
@@ -1311,7 +1368,8 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: 50rem;
+	max-width: 80rem;
+	margin: 0 auto;
 }
 .about_wrapper {
 	width: 80vw;
@@ -1339,9 +1397,11 @@ footer {
 .about_info p {
 	padding: 0 3rem;
 	min-width: 20rem;
+	text-align: justify;
 }
 .about_info ul {
 	padding: 0 1rem;
+	margin-bottom: 3rem;
 	list-style: none;
 	display: flex;
 }
@@ -1444,13 +1504,13 @@ footer {
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
-	min-height: 55rem;
+	min-height: 45rem;
 }
 .help_general h1 {
 	font-size: 3rem;
 }
 .general_accordion {
-	margin: 1rem 1rem 1rem 0;
+	margin: 1rem;
 	max-width: 50rem;
 	display: flex;
 	flex-direction: column;
@@ -1468,7 +1528,6 @@ footer {
 	position: relative;
 	padding: 1rem;
 	border: 0.2rem solid #fd7014;
-
 	color: black;
 	cursor: pointer;
 	border-radius: 10rem;
@@ -1490,19 +1549,20 @@ footer {
 .general_accordion .accordion_box .box_list {
 	position: relative;
 	background: white;
-	height: 0;
-	-webkit-transition: 500ms;
-	transition: 500ms;
+	height: auto;
+	max-height: 0;
+	-webkit-transition: max-height 500ms linear;
+	transition: max-height 500ms linear;
 	overflow-y: auto;
 	overflow: hidden;
 }
 .general_accordion .accordion_box.active .box_list {
-	height: 12rem;
-	padding-bottom: 1rem;
+	max-height: 30rem;
+	padding-bottom: 0;
 	overflow: hidden;
 }
 .list_wrapper {
-	padding: 0 1rem 0 3rem;
+	padding: 0 2rem;
 }
 .list_question > a {
 	text-decoration: none;
@@ -1513,7 +1573,6 @@ footer {
 	cursor: pointer;
 }
 .general_accordion .accordion_box .box_list ul li {
-	text-align: justify;
 	border: 0.1rem solid #fd7014;
 	border-top: 0;
 }
@@ -1527,6 +1586,8 @@ footer {
 .box_list ul li {
 	padding: 0.5rem 0 0.5rem 2rem;
 	width: 45rem;
+	display: flex;
+	flex-direction: row;
 }
 
 .box_list ul li:nth-child(odd) {
@@ -1541,19 +1602,23 @@ footer {
 	width: 2rem;
 	margin: auto 0.5rem;
 }
+.list_question > a {
+	margin-right: 1rem;
+	border-style: none;
+}
 .list_question > a:hover {
 	cursor: pointer;
 }
+.list_question > span {
+	margin-right: 1rem;
+}
 @media (max-width: 55rem) {
 	.general_accordion .accordion_box .box_label {
-		width: 90%;
+		width: 85vw;
 	}
 	.box_list ul li {
 		width: 85%;
 		padding: 1rem;
-	}
-	.general_accordion .accordion_box.active .box_list {
-		height: 22rem;
 	}
 }
 @media (max-width: 40rem) {
