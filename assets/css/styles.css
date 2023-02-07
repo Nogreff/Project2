@@ -270,6 +270,7 @@ header {
 	.mobile_toggle[aria-expanded='true'] {
 		background: url('/assets/img/menu/close.svg');
 		background-repeat: no-repeat;
+		position: fixed;
 	}
 }
 
