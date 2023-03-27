@@ -419,8 +419,6 @@ header {
 	z-index: -1;
 	transition: transform 450ms ease-in;
 }
-.from-left.appear {
-}
 
 .from-left.appear::after,
 .from-right.appear::after {
